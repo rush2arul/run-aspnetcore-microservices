@@ -31,7 +31,7 @@ pipeline {
       steps {
 	 dir('src')
         	{       
-		/usr/local/bin/docker-compose build
+		sh '/usr/local/bin/docker-compose build'
         	}
 
       }
