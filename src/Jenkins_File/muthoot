@@ -24,14 +24,15 @@ pipeline {
     stage('Validation') {
       steps {
         sh "echo Validation"
-      }
+      	   }
     }
+
     stage('Build') {
       steps {
 	 dir('Jenkins_File')
-        {       
-        docker-compose build .  
-        }
+        	{       
+		sh '/usr/local/bin/docker-compose up --build'
+        	}
 
       }
     }
@@ -39,11 +40,11 @@ pipeline {
       steps {
 
 	 dir('Jenkins_File')
-        {       
-        docker-compose run .  
-        }
+	        {       
+        	sh '/usr/local/bin/docker-compose run'  
+        	}
 
-      }
-    }
-  }
+      	}
+    		}
+  	}
 }
