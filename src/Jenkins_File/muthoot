@@ -21,23 +21,29 @@ pipeline {
     )
   }
   stages {
-    stage('Build') {
+    stage('Validation') {
       steps {
-	dir('Jenkins_File')
-	{	
-	sh 'pwd'
-	docker-compose build . 
-      	}
+        sh "echo Validation"
       }
     }
+    stage('Build') {
+      steps {
+	 dir('Jenkins_File')
+        {       
+        docker-compose build .  
+        }
 
+      }
+    }
     stage('Deploy') {
       steps {
-	dir('Jenkins_File')
-        {
-	        docker-compose run
+
+	 dir('Jenkins_File')
+        {       
+        docker-compose run .  
         }
-	}	
+
       }
+    }
   }
 }
