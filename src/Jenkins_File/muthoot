@@ -26,7 +26,7 @@ pipeline {
 	dir('Jenkins_File')
 	{	
 	sh 'pwd'
-	docker-compose build 
+	docker-compose build . 
       	}
       }
     }
