@@ -28,7 +28,9 @@ pipeline {
 	sh 'pwd'
 	docker-compose build 
       	}
+      }
     }
+
     stage('Deploy') {
       steps {
 	dir('Jenkins_File')
@@ -37,6 +39,5 @@ pipeline {
         }
 	}	
       }
-    }
   }
 }
