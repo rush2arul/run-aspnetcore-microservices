@@ -31,7 +31,7 @@ pipeline {
       steps {
 	 dir('src')
         	{       
-		sh '/usr/local/bin/docker-compose up --build'
+		sh '/usr/local/bin/docker-compose build'
         	}
 
       }
@@ -41,7 +41,7 @@ pipeline {
 
 	 dir('src')
 	        {       
-        	sh '/usr/local/bin/docker-compose run'  
+        	echo 'deploy'  
         	}
 
       	}
