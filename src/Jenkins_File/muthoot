@@ -24,6 +24,7 @@ pipeline {
     stage('Validation') {
       steps {
         sh "echo Validation"
+	sh 'env >/tmp/enbn1'
       	   }
     }
 
@@ -31,7 +32,8 @@ pipeline {
       steps {
 	 dir('src')
         	{       
-		sh '/usr/local/bin/docker-compose build'
+		sh '#/usr/local/bin/docker-compose build'
+		sh 'printenv >/tmp/printenv'
         	}
 
       }
